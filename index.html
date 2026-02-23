@@ -18,75 +18,40 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Branding Styles */
         .brand-container { text-align: center; margin-bottom: 25px; }
-        .brand-logo { 
-            width: 100px; height: auto; margin-bottom: 10px; 
-            filter: drop-shadow(0 5px 15px rgba(59, 130, 246, 0.4)); 
-        }
+        .brand-logo { width: 100px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 5px 15px rgba(59, 130, 246, 0.4)); }
         .brand-name { font-size: 32px; font-weight: 900; margin: 0; letter-spacing: -1px; }
         .brand-dot { color: var(--success); }
         .slogan { font-size: 12px; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
 
-        /* Profile & Layout */
-        .profile-container { position: absolute; top: 20px; right: 20px; z-index: 1001; }
-        .avatar-circle { width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary), #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid rgba(255,255,255,0.15); box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-        .profile-dropdown { position: absolute; top: 55px; right: 0; background: var(--glass); backdrop-filter: blur(25px); width: 210px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); display: none; padding: 8px; transform-origin: top right; z-index: 1002; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .dropdown-item { padding: 14px; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 12px; cursor: pointer; border-radius: 14px; transition: 0.2s; }
-        .dropdown-item:hover { background: rgba(255,255,255,0.1); }
-        .show-menu { display: block !important; animation: zoomIn 0.3s forwards; }
-
         .container { max-width: 460px; margin: auto; padding: 40px 20px; position: relative; }
         .luxury-card { background: var(--glass); backdrop-filter: blur(25px); padding: 35px; border-radius: 35px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 
-        .input-group { margin-bottom: 22px; position: relative; }
+        .input-group { margin-bottom: 18px; position: relative; }
         label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 8px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
         
-        .phone-wrapper { position: relative; display: flex; align-items: center; }
-        .country-code { position: absolute; left: 15px; color: var(--primary); font-weight: 800; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 10px; font-size: 16px; }
-        .phone-input { padding-left: 60px !important; }
-
-        input { width: 100%; padding: 15px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 15px; box-sizing: border-box; font-size: 16px; transition: 0.3s; outline: none; }
+        input { width: 100%; padding: 15px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 15px; box-sizing: border-box; font-size: 16px; outline: none; transition: 0.3s; }
         input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
 
-        .btn-main { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 15px; font-weight: 800; font-size: 15px; cursor: pointer; transition: 0.3s; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-main { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 15px; font-weight: 800; font-size: 15px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
         .btn-main:active { transform: scale(0.96); }
 
-        .tab-box { display: flex; background: rgba(0,0,0,0.3); border-radius: 15px; padding: 5px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.05); }
+        .tab-box { display: flex; background: rgba(0,0,0,0.3); border-radius: 15px; padding: 5px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.05); }
         .tab-btn { flex: 1; padding: 12px; border: none; border-radius: 12px; cursor: pointer; font-weight: 700; color: #94a3b8; background: transparent; transition: 0.3s; }
         .active-tab { background: var(--slate-grey); color: #fff; }
 
         .candidate-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 22px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.06); animation: fadeInUp 0.4s; }
-        .status-badge { font-size: 9px; padding: 5px 10px; border-radius: 8px; font-weight: 800; text-transform: uppercase; margin-top: 10px; display: inline-block; }
-
         #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        
-        /* reCAPTCHA Styling for Mobile */
-        #recaptcha-container {
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
 
 <div id="intro-overlay">
     <img src="logo.png" style="width: 150px; height: auto; margin-bottom: 20px;" class="animate__animated animate__pulse animate__infinite" onerror="this.style.display='none'">
-    <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: 8px; background: linear-gradient(to right, #3b82f6, #f8fafc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" class="animate__animated animate__zoomIn">ROZGAAR IN</div>
+    <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: 8px; color: #fff;">ROZGAAR IN</div>
 </div>
 
 <div class="container" id="main-content" style="display:none;">
-    <div class="profile-container" id="profileArea" style="display:none;">
-        <div class="avatar-circle" onclick="toggleProfileMenu()"><span>👤</span></div>
-        <div class="profile-dropdown" id="myDropdown">
-            <div class="dropdown-item" onclick="switchSection('app')">🏠 Home Site</div>
-            <div class="dropdown-item" id="dashLink" onclick="switchSection('dashboard')">📊 My Dashboard</div>
-            <hr style="opacity:0.1; margin: 8px 0;">
-            <div class="dropdown-item" style="color:var(--danger);" onclick="logout()"><span>🚪</span> Sign Out</div>
-        </div>
-    </div>
-    
     <div class="luxury-card">
         <div class="brand-container">
             <img src="logo.png" alt="RozgaarIn Logo" class="brand-logo" onerror="this.style.display='none'">
@@ -94,41 +59,28 @@
             <span class="slogan">Connect. Grow. Succeed.</span>
         </div>
 
-        <div id="login-section">
-            <div id="phone-part">
-                <div class="input-group">
-                    <label>Mobile Verify</label>
-                    <div class="phone-wrapper"><span class="country-code">+91</span><input type="number" id="phoneNumber" class="phone-input" placeholder="00000 00000"></div>
-                </div>
-                <div id="recaptcha-container"></div>
-                <button class="btn-main" onclick="sendOTP()">REQUEST ACCESS ✉️</button>
-            </div>
-            <div id="otp-part" style="display:none;">
-                <div class="input-group"><label>Verify OTP</label><input type="number" id="otpCode" placeholder="X X X X X X"></div>
-                <button class="btn-main" style="background:var(--success);" onclick="verifyOTP()">VERIFY & ENTER ✨</button>
-            </div>
-        </div>
-
-        <div id="app-section" style="display:none;">
+        <div id="app-section">
             <div class="tab-box">
                 <button class="tab-btn active-tab" id="btnSeeker" onclick="showForm('seeker')">Staff Baniye</button>
                 <button class="tab-btn" id="btnEmployer" onclick="showForm('employer')">Staff Dhoondhein</button>
             </div>
 
-            <div id="seekerForm" class="animate__animated">
-                <div class="input-group"><label>Pura Naam</label><input type="text" id="sName"></div>
-                <div class="input-group"><label>Apna Skill</label><input type="text" id="sSkill" placeholder="e.g. Sales, Driver"></div>
+            <div id="seekerForm" class="animate__animated animate__fadeIn">
+                <div class="input-group"><label>Pura Naam</label><input type="text" id="sName" placeholder="Pranjal Gupta"></div>
+                <div class="input-group"><label>Mobile Number</label><input type="number" id="sPhone" placeholder="7080935352"></div>
+                <div class="input-group"><label>Apna Skill</label><input type="text" id="sSkill" placeholder="e.g. Sales, Driver, Electrician"></div>
                 <div class="input-group" style="display: flex; gap: 15px;">
                     <div style="flex: 1;"><label>Pincode</label><input type="number" id="sPincode" oninput="fetchCity(this.value, 'sLocation')"></div>
                     <div style="flex: 1;"><label>Saher</label><input type="text" id="sLocation" readonly></div>
                 </div>
-                <div class="input-group"><label>Monthly Salary (₹)</label><input type="number" id="sSalary"></div>
+                <div class="input-group"><label>Expected Salary (₹)</label><input type="number" id="sSalary"></div>
                 <button class="btn-main" onclick="saveData()">PUBLISH PROFILE ✨</button>
             </div>
 
-            <div id="employerForm" style="display:none;" class="animate__animated">
+            <div id="employerForm" style="display:none;" class="animate__animated animate__fadeIn">
                 <div id="employerPart1">
-                    <div class="input-group"><label>Dukan Name</label><input type="text" id="empCompany"></div>
+                    <div class="input-group"><label>Dukan/Company Name</label><input type="text" id="empCompany"></div>
+                    <div class="input-group"><label>Aapka Number</label><input type="number" id="empPhone" placeholder="Contact number"></div>
                     <div class="input-group" style="display: flex; gap: 15px;">
                         <div style="flex: 1;"><label>Area Pincode</label><input type="number" id="empPincode" oninput="fetchCity(this.value, 'empLocation')"></div>
                         <div style="flex: 1;"><label>Saher</label><input type="text" id="empLocation" readonly></div>
@@ -137,188 +89,84 @@
                     <button class="btn-main" onclick="goToStep2()">Next ➡️</button>
                 </div>
                 <div id="employerPart2" style="display:none;">
-                    <div class="input-group"><label>Staff Needed</label><input type="text" id="searchSkill"></div>
-                    <div class="input-group"><label>Budget (₹)</label><input type="number" id="searchBudget"></div>
+                    <div class="input-group"><label>Kaunsa Staff Chahiye?</label><input type="text" id="searchSkill" placeholder="e.g. Sales"></div>
                     <div style="display:flex; gap:10px;">
                         <button class="btn-main" style="background:var(--slate-grey); flex:0.4;" onclick="goToStep1()">Back</button>
-                        <button class="btn-main" style="background:var(--success); flex:1;" onclick="findStaff()">SEARCH 🔍</button>
+                        <button class="btn-main" style="background:var(--success); flex:1;" onclick="findStaff()">SEARCH STAFF 🔍</button>
                     </div>
                     <div id="results"></div>
                 </div>
             </div>
         </div>
-
-        <div id="dashboard-section" style="display:none;" class="animate__animated animate__fadeIn">
-            <h2 id="dashTitle" style="font-size: 18px; text-align: center; color: var(--primary); margin-bottom: 20px;"></h2>
-            <div id="roleContent"></div>
-            <button class="btn-main" style="background:var(--slate-grey); margin-top:20px;" onclick="switchSection('app')">⬅️ Back to Home</button>
-        </div>
     </div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
 <script>
     const firebaseConfig = { apiKey: "AIzaSyD3hc6Rz1gHZq8c71AHp5NSw8eSZT2-Mik", authDomain: "savitri-job-bridge.firebaseapp.com", projectId: "savitri-job-bridge", storageBucket: "savitri-job-bridge.firebasestorage.app", messagingSenderId: "721066136910", appId: "1:721066136910:web:61b5d58b31d8ab481f7a1f" };
     firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
     const db = firebase.firestore();
-    
-    let currentRole = 'seeker';
 
     window.addEventListener('load', () => setTimeout(() => { 
         document.getElementById('intro-overlay').style.display = 'none'; 
-        document.getElementById('main-content').style.display = 'block';
-        // Initialize Visible reCAPTCHA
-        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-            'size': 'normal'
-        });
-        window.recaptchaVerifier.render();
-    }, 2000));
-
-    function toggleProfileMenu() { document.getElementById('myDropdown').classList.toggle('show-menu'); }
-    function logout() { auth.signOut().then(() => location.reload()); }
+        document.getElementById('main-content').style.display = 'block'; 
+    }, 1500));
 
     function showForm(t) {
-        currentRole = t;
         document.getElementById('seekerForm').style.display = t === 'seeker' ? 'block' : 'none';
         document.getElementById('employerForm').style.display = t === 'employer' ? 'block' : 'none';
         document.getElementById('btnSeeker').className = t === 'seeker' ? 'tab-btn active-tab' : 'tab-btn';
         document.getElementById('btnEmployer').className = t === 'employer' ? 'tab-btn active-tab' : 'tab-btn';
-        document.getElementById('dashLink').innerText = t === 'seeker' ? "📊 My Work Place" : "📊 My Hired Staff";
     }
 
-    function switchSection(sec) {
-        document.getElementById('app-section').style.display = sec === 'app' ? 'block' : 'none';
-        document.getElementById('dashboard-section').style.display = sec === 'dashboard' ? 'block' : 'none';
-        document.getElementById('myDropdown').classList.remove('show-menu');
-        if(sec === 'dashboard') loadContextDashboard();
+    async function fetchCity(pin, tid) { 
+        if(pin.length===6){ 
+            const up={"274204":"Rudrapur, Deoria","274001":"Deoria City"}; 
+            const inp=document.getElementById(tid); 
+            if(up[pin]){inp.value=up[pin];}
+            else{try{const r=await fetch(`https://api.zippopotam.us/in/${pin}`);if(r.ok){const d=await r.json();inp.value=d.places[0]['place name'] + ", UP";}}catch(e){}}
+        } 
     }
 
-    function sendOTP() {
-        const val = document.getElementById('phoneNumber').value;
-        if(val.length < 10) {
-            Swal.fire({icon:'error', text:'10 digit number daalein'});
-            return;
-        }
-        
-        const appVerifier = window.recaptchaVerifier;
-        auth.signInWithPhoneNumber("+91"+val, appVerifier).then(res => {
-            window.confirmationResult = res;
-            document.getElementById('phone-part').style.display = 'none';
-            document.getElementById('otp-part').style.display = 'block';
-            Swal.fire({icon:'success', title:'Code Sent!', background:'#111827', color:'#fff', timer:1500, showConfirmButton:false});
-        }).catch(err => {
-            console.error(err);
-            Swal.fire({icon:'error', title:'Error', text: 'Shayad Domain authorized nahi hai ya network issue hai.'});
-        });
-    }
-
-    function verifyOTP() {
-        const code = document.getElementById('otpCode').value;
-        confirmationResult.confirm(code).then(() => toggleUI(true)).catch(() => Swal.fire({icon:'error', text:'Wrong OTP'}));
-    }
-    function toggleUI(isLoggedIn) {
-        document.getElementById('login-section').style.display = isLoggedIn ? 'none' : 'block';
-        document.getElementById('app-section').style.display = isLoggedIn ? 'block' : 'none';
-        document.getElementById('profileArea').style.display = isLoggedIn ? 'block' : 'none';
-    }
-    auth.onAuthStateChanged(user => toggleUI(!!user));
-
-    async function loadContextDashboard() {
-        const myPhone = auth.currentUser.phoneNumber.replace("+91","");
-        const container = document.getElementById('roleContent');
-        const title = document.getElementById('dashTitle');
-        container.innerHTML = "<p style='text-align:center;'>Loading Secure Data...</p>";
-
-        if(currentRole === 'employer') {
-            title.innerText = "My Hired Staff Tracker";
-            db.collection("JobSeekers").where("employerContact", "==", myPhone).onSnapshot(snap => {
-                let h = "";
-                snap.forEach(doc => {
-                    const d = doc.data();
-                    let contactBtn = (d.dealStatus === 'Accepted' || d.dealStatus === 'Deal Done') 
-                        ? `<div style="display:flex; gap:10px; margin-top:12px;">
-                                <a href="tel:+91${d.phone}" class="btn-main" style="flex:1; background:var(--primary); padding:10px; font-size:11px; text-decoration:none; text-align:center; margin-top:0;">📞 Call</a>
-                                <a href="https://wa.me/91${d.phone}?text=Hello, RozgaarIn se baat ho rahi hai." class="btn-main" style="flex:1; background:#25D366; padding:10px; font-size:11px; text-decoration:none; text-align:center; margin-top:0;">💬 Chat</a>
-                           </div>` 
-                        : `<p style="font-size:10px; color:#94a3b8; margin-top:10px; font-style:italic;">🔒 Contacts hidden until Acceptance</p>`;
-
-                    h += `<div class="candidate-card animate__animated animate__fadeIn">
-                            <b>👤 ${d.name}</b><br>
-                            <span class="status-badge" style="background:var(--primary)">${d.dealStatus || 'Request Pending'}</span>
-                            ${contactBtn}
-                            <div style="margin-top:15px; display:flex; gap:10px;">
-                                <button onclick="updateDeal('${doc.id}', 'Deal Done')" class="btn-main" style="padding:10px; font-size:11px; background:var(--success); margin:0;">Done 🤝</button>
-                                <button onclick="updateDeal('${doc.id}', 'Cancelled')" class="btn-main" style="padding:10px; font-size:11px; background:var(--danger); margin:0;">Remove</button>
-                            </div>
-                        </div>`;
-                });
-                container.innerHTML = h || "<p style='text-align:center; font-size:12px;'>No records found.</p>";
-            });
-        } else {
-            title.innerText = "Job Offers for Me";
-            db.collection("JobSeekers").where("phone", "==", myPhone).onSnapshot(snap => {
-                let h = "";
-                snap.forEach(doc => {
-                    const d = doc.data();
-                    if(d.hireRequestedBy) {
-                        h += `<div class="candidate-card animate__animated animate__fadeIn" style="border-left:4px solid var(--success);">
-                                <b>🏢 ${d.hireRequestedBy}</b><br>
-                                <small>📍 ${d.employerAddress || 'Local Area'}</small>
-                                <div style="display:flex; gap:10px; margin-top:12px;">
-                                    <a href="tel:+91${d.employerContact}" class="btn-main" style="flex:1; background:var(--primary); padding:10px; font-size:11px; text-decoration:none; text-align:center; margin-top:0;">📞 Call</a>
-                                    <a href="https://wa.me/91${d.employerContact}?text=Hello, maine aapka RozgaarIn offer dekha." class="btn-main" style="flex:1; background:#25D366; padding:10px; font-size:11px; text-decoration:none; text-align:center; margin-top:0;">💬 Chat</a>
-                                </div>
-                                <div style="margin-top:15px; display:flex; gap:10px;">
-                                    <button onclick="updateDeal('${doc.id}', 'Accepted')" class="btn-main" style="padding:10px; font-size:11px; background:var(--success); margin:0;">Accept ✅</button>
-                                    <button onclick="updateDeal('${doc.id}', 'Rejected')" class="btn-main" style="padding:10px; font-size:11px; background:var(--danger); margin:0;">Reject</button>
-                                </div>
-                            </div>`;
-                    }
-                });
-                container.innerHTML = h || "<p style='text-align:center; font-size:12px;'>No offers received yet.</p>";
-            });
-        }
-    }
-
-    function updateDeal(id, status) {
-        let updateData = { dealStatus: status };
-        if(status === 'Cancelled' || status === 'Rejected') { updateData.hireRequestedBy = null; updateData.employerContact = null; updateData.employerAddress = null; updateData.dealStatus = null; }
-        db.collection("JobSeekers").doc(id).update(updateData).then(() => {
-            Swal.fire({ icon:'success', title: status, timer:1500, background:'#111827', color:'#fff' });
-        });
-    }
-
-    async function fetchCity(pin, tid) { if(pin.length===6){ const up={"274204":"Rudrapur, Deoria","274001":"Deoria City"}; const inp=document.getElementById(tid); if(up[pin]){inp.value=up[pin];}else{try{const r=await fetch(`https://api.zippopotam.us/in/${pin}`);if(r.ok){const d=await r.json();inp.value=d.places[0]['place name'] + ", UP";}}catch(e){}}} }
-    function goToStep2(){ if(!document.getElementById('empCompany').value || !document.getElementById('empLocation').value){Swal.fire({icon:'warning', title:'Details!', text:'Fill Shop Details first'}); return;} document.getElementById('employerPart1').style.display='none'; document.getElementById('employerPart2').style.display='block'; }
+    function goToStep2(){ if(!document.getElementById('empCompany').value || !document.getElementById('empPhone').value){Swal.fire({icon:'warning', text:'Fill Shop Details & Phone first'}); return;} document.getElementById('employerPart1').style.display='none'; document.getElementById('employerPart2').style.display='block'; }
     function goToStep1(){ document.getElementById('employerPart1').style.display='block'; document.getElementById('employerPart2').style.display='none'; }
-    
+
     function saveData() {
-        const data = { name:document.getElementById('sName').value, skill:document.getElementById('sSkill').value.toLowerCase().trim(), location:document.getElementById('sLocation').value, pincode:document.getElementById('sPincode').value, salary:Number(document.getElementById('sSalary').value), phone:auth.currentUser.phoneNumber.replace("+91",""), status:"Available", time:new Date() };
-        if(!data.name || !data.pincode){ Swal.fire({icon:'error', text:'Fill All Fields!'}); return; }
-        db.collection("JobSeekers").add(data).then(() => { Swal.fire({icon:'success', title:'Profile Live on RozgaarIn! 🚀'}).then(() => window.location.reload()); });
+        const data = { 
+            name: document.getElementById('sName').value, 
+            phone: document.getElementById('sPhone').value,
+            skill: document.getElementById('sSkill').value.toLowerCase().trim(), 
+            location: document.getElementById('sLocation').value, 
+            pincode: document.getElementById('sPincode').value, 
+            salary: Number(document.getElementById('sSalary').value), 
+            status: "Available", 
+            time: new Date() 
+        };
+        if(!data.name || !data.phone || !data.skill){ Swal.fire({icon:'error', text:'Saari details bharein!'}); return; }
+        db.collection("JobSeekers").add(data).then(() => { 
+            Swal.fire({icon:'success', title:'Profile Live on RozgaarIn! 🚀'}).then(() => window.location.reload()); 
+        });
     }
 
     async function findStaff() {
         const skill = document.getElementById('searchSkill').value.toLowerCase().trim();
         const loc = document.getElementById('empLocation').value;
-        const budget = Number(document.getElementById('searchBudget').value);
         const resDiv = document.getElementById('results');
-        resDiv.innerHTML = "<p style='text-align:center;'>Searching RozgaarIn...</p>";
-        const snap = await db.collection("JobSeekers").where("skill","==",skill).where("location","==",loc).where("status","==","Available").get();
+        resDiv.innerHTML = "<p style='text-align:center;'>Searching...</p>";
+        
+        const snap = await db.collection("JobSeekers").where("skill","==",skill).where("location","==",loc).get();
         let h = "";
-        snap.forEach(doc => { const d = doc.data(); if(!budget || d.salary <= budget) { h += `<div class="candidate-card animate__animated animate__fadeInUp"><b>👤 ${d.name}</b><br><small>📍 ${d.location}</small><br><span style="font-weight:700; color:var(--success);">₹${d.salary}/Month</span><button onclick="requestHire('${doc.id}')" class="btn-main" style="padding:10px; font-size:12px; height:auto; margin-top:10px;">Hire Staff</button></div>`; } });
-        resDiv.innerHTML = h || "<p style='text-align:center; padding:20px;'>Match nahi mila.</p>";
-    }
-
-    function requestHire(sid) {
-        const ec = auth.currentUser.phoneNumber.replace("+91","");
-        const cn = document.getElementById('empCompany').value;
-        const cad = document.getElementById('empAddress').value;
-        db.collection("JobSeekers").doc(sid).update({ hireRequestedBy: cn, employerContact: ec, employerAddress: cad, dealStatus: 'Pending' }).then(() => Swal.fire({ icon:'success', title:'Hiring Requested! 🎊' }));
+        snap.forEach(doc => { 
+            const d = doc.data(); 
+            h += `<div class="candidate-card animate__animated animate__fadeInUp">
+                    <b>👤 ${d.name}</b><br>
+                    <span style="font-size:12px; color:var(--success);">₹${d.salary}/Month</span><br>
+                    <a href="tel:+91${d.phone}" class="btn-main" style="padding:10px; font-size:12px; text-decoration:none; display:inline-block; text-align:center; width:auto; margin-top:10px; background:var(--success);">Call Staff 📞</a>
+                  </div>`; 
+        });
+        resDiv.innerHTML = h || "<p style='text-align:center; padding:20px;'>Is area mein abhi koi staff nahi mila.</p>";
     }
 </script>
 </body>
