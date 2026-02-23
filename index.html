@@ -60,6 +60,13 @@
         .status-badge { font-size: 9px; padding: 5px 10px; border-radius: 8px; font-weight: 800; text-transform: uppercase; margin-top: 10px; display: inline-block; }
 
         #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        /* reCAPTCHA Styling for Mobile */
+        #recaptcha-container {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -161,7 +168,16 @@
     
     let currentRole = 'seeker';
 
-    window.addEventListener('load', () => setTimeout(() => { document.getElementById('intro-overlay').style.display = 'none'; document.getElementById('main-content').style.display = 'block'; }, 2000));
+    window.addEventListener('load', () => setTimeout(() => { 
+        document.getElementById('intro-overlay').style.display = 'none'; 
+        document.getElementById('main-content').style.display = 'block';
+        // Initialize Visible reCAPTCHA
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'normal'
+        });
+        window.recaptchaVerifier.render();
+    }, 2000));
+
     function toggleProfileMenu() { document.getElementById('myDropdown').classList.toggle('show-menu'); }
     function logout() { auth.signOut().then(() => location.reload()); }
 
@@ -181,17 +197,25 @@
         if(sec === 'dashboard') loadContextDashboard();
     }
 
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', { 'size': 'invisible' });
     function sendOTP() {
         const val = document.getElementById('phoneNumber').value;
-        if(val.length < 10) return;
-        auth.signInWithPhoneNumber("+91"+val, window.recaptchaVerifier).then(res => {
+        if(val.length < 10) {
+            Swal.fire({icon:'error', text:'10 digit number daalein'});
+            return;
+        }
+        
+        const appVerifier = window.recaptchaVerifier;
+        auth.signInWithPhoneNumber("+91"+val, appVerifier).then(res => {
             window.confirmationResult = res;
             document.getElementById('phone-part').style.display = 'none';
             document.getElementById('otp-part').style.display = 'block';
             Swal.fire({icon:'success', title:'Code Sent!', background:'#111827', color:'#fff', timer:1500, showConfirmButton:false});
+        }).catch(err => {
+            console.error(err);
+            Swal.fire({icon:'error', title:'Error', text: 'Shayad Domain authorized nahi hai ya network issue hai.'});
         });
     }
+
     function verifyOTP() {
         const code = document.getElementById('otpCode').value;
         confirmationResult.confirm(code).then(() => toggleUI(true)).catch(() => Swal.fire({icon:'error', text:'Wrong OTP'}));
